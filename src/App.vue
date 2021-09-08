@@ -1,15 +1,26 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <div class="flex flex-column flex-full-center">
-    <h1>
-      Your emuoji:
-      <Emoji :id="emojiIndex" :emoji="emojiChar" />
-    </h1>
-    <!-- <label>&#128512;</label> -->
-    <div>
-      <a target="_blank">
+  <div>
+    <div class="flex flex-column">
+      <div>
+        <h1>
+          Your emuoji:
+          <Emoji :id="emojiIndex" :emoji="emojiChar" />
+        </h1>
+      </div>
+      <div>
         <button class="btn large primary" @click="click">¡ Pop !</button>
+      </div>
+    </div>
+    <div class="footer">
+      Fun random
+      <a
+        href="https://github.com/ralcorta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="./assets/GitHub-Mark-32px.png" alt="Github" />
       </a>
+      project.
     </div>
   </div>
 </template>
@@ -29,22 +40,22 @@ export default {
     };
   },
   mounted() {
-    const blacklist = new Set([
-      "☺️",
-      "☺",
-      "☹️",
-      "☹",
-      "☠",
-      "❣",
-      "❤",
-      "🕳️",
-      "👁‍🗨️",
-      "👁️‍🗨",
-      "👁‍🗨",
-      "🗨",
-      "🗯️",
-    ]);
-    this.emojis = emoji.filter((item) => !blacklist.has(item.char));
+    // const blacklist = new Set([
+    //   "☺️",
+    //   "☺",
+    //   "☹️",
+    //   "☹",
+    //   "☠",
+    //   "❣",
+    //   "❤",
+    //   "🕳️",
+    //   "👁‍🗨️",
+    //   "👁️‍🗨",
+    //   "👁‍🗨",
+    //   "🗨",
+    //   "🗯️",
+    // ]);
+    this.emojis = emoji; //.filter((item) => !blacklist.has(item.char));
     this.click();
   },
   methods: {
@@ -79,21 +90,26 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .flex {
+  min-height: 50vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-column {
   flex-direction: column;
-}
-
-.flex-full-center {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn {
