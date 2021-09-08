@@ -3,7 +3,7 @@
     <div class="flex flex-column">
       <div>
         <h1>
-          Your emuoji:
+          Your emoji:
           <Emoji :id="emojiIndex" :emoji="emojiChar" />
         </h1>
       </div>
