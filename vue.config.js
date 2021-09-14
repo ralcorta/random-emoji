@@ -1,3 +1,3 @@
 module.exports = {
-	publicPath: process.env.NODE_ENV === 'production' ? '/random-emoji/' : '/'
+	publicPath: '/' //process.env.NODE_ENV === 'production' ? '/random-emoji/' : '/'
 };
